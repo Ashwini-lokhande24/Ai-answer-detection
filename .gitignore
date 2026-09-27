@@ -1,0 +1,4 @@
+*.zip
+Training_Essay_Data.csv
+__pycache__/
+*.pyc
