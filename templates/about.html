@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About — AI Answer Detector</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@500;600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --paper: #FBF9F4;
+    --paper-edge: #EFEAE0;
+    --ink: #1C2541;
+    --ink-soft: #5B6478;
+    --pen: #C1440E;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+  }
+  .sheet {
+    width: 100%;
+    max-width: 640px;
+    background: #fff;
+    border: 1px solid var(--paper-edge);
+    border-radius: 6px;
+    padding: 48px 44px;
+    box-shadow: 0 1px 3px rgba(28,37,65,0.06);
+  }
+  h1 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 26px;
+    margin: 0 0 24px;
+  }
+  h2 {
+    font-family: 'Source Serif 4', serif;
+    font-weight: 600;
+    font-size: 17px;
+    margin: 28px 0 8px;
+  }
+  p, li {
+    font-size: 15px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+  }
+  ul { margin: 0; padding-left: 20px; }
+  a {
+    display: inline-block;
+    margin-top: 32px;
+    color: var(--pen);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <h1>About this project</h1>
+    <p>AI-Generated Student Answer Detection uses NLP and Deep Learning to estimate whether a written answer reads as human-written or AI-generated, based on linguistic patterns in the text.</p>
+
+    <h2>How it works</h2>
+    <p>Submitted text is cleaned and tokenized, then passed through a Bidirectional LSTM model trained on a labeled dataset of human- and AI-written essays. The model outputs a confidence score rather than a definitive judgment.</p>
+
+    <h2>Model performance</h2>
+    <ul>
+      <li>Trained on ~27,000 essays</li>
+      <li>98.57% accuracy on held-out test data</li>
+      <li>Balanced precision and recall across both classes</li>
+    </ul>
+
+    <h2>A note on limitations</h2>
+    <p>This model is trained specifically on essay-style writing. It is not reliable on very short text, conversational prompts, or text unlike its training data — and its output should be read as a pattern-based estimate, not proof of authorship.</p>
+
+    <a href="/">&larr; Back to detector</a>
+  </div>
+</body>
+</html>
